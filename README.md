@@ -1,2 +1,1 @@
-# F1 Mercedes Repo
- 
+This project has been built with Flask, numerous code has been taken from another one of my apps that I have built - CS50 Final Project.
