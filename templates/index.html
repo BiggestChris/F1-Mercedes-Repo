@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}
+    Index
+{% endblock %}
+{% block content %}
+    <h1>Production of ChatGPT analysis of radio comms.</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 comms-content border">
+                <h2>ALERT:</h2>
+                <pre><h4>{{ last_completion_with_advice['info'] }}</h4></pre>
+                <h2>ADVICE: </h2>
+                <pre><h4>{{ last_completion_with_advice['advice'] }}</h4></pre>
+                <p>Log extract</p>
+                <pre>{{ last_completion_with_advice['comms'] }}</pre>
+            </div>
+
+            <div class="col-md-6 comms-content border">
+                <h3>Radio Log</h3>
+                {% for completion in completions %}
+                    <p>-----</p>
+                    <pre>{{ completion['comms'] }}</pre>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
